@@ -3,7 +3,6 @@
 ## Installation
 
 ```
-cd portfolio-gm-react
 npm install
 npm run dev
 ```
