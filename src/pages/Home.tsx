@@ -1,4 +1,6 @@
 import { Divider, Paper, Typography } from '@mui/material'
+import { CatCard } from 'modules/cat'
+import { ThemeToggleButton } from 'modules/theme';
 
 const Home = () => {
 
@@ -11,6 +13,8 @@ const Home = () => {
       <Typography variant='h2'>UNDER CONSTRUCTION</Typography>
       <Divider />
       <Typography variant='body1'>Content coming soon...</Typography>
+      <CatCard />
+      <ThemeToggleButton />
     </Paper>
   )
 }

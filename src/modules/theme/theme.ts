@@ -6,9 +6,9 @@ export const getTheme = (mode: PaletteMode = 'light') =>
     palette: {
       mode,
       primary: {
-        main: '#7c5cff',
-        light: '#967CFF',
-        dark: '#5640B2',
+        main: '#2ac5a6',
+        light: '#54D0B7',
+        dark: '#1D8974',
         contrastText: '#ffffff',
       },
       secondary: {
