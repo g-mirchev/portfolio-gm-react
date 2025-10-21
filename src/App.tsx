@@ -5,8 +5,6 @@ import { store, persistor } from './lib/store';
 
 import Router from './router/Router';
 
-import 'App.css'
-
 /**
  * The root component of the application.
  *
