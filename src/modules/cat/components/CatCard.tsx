@@ -34,7 +34,12 @@ export default function CatCard() {
 
       const res = await fetch(
         'https://api.thecatapi.com/v1/images/search?size=small&mime_types=jpg,png&order=RANDOM&limit=1',
-        { signal }
+        { 
+          signal, 
+          headers: { 
+            'x-api-key': import.meta.env.VITE_APP_CAT_API_KEY 
+          } 
+        }
       );
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
 
