@@ -16,7 +16,6 @@ const GlobalLayout: FC = (): ReactElement => {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Box
-        maxWidth='lg'
         sx={{
           backgroundColor: theme.palette.background.default,
           color: theme.palette.text.primary,
