@@ -12,7 +12,7 @@ const Home = () => {
     >
       <Typography variant='h2'>UNDER CONSTRUCTION</Typography>
       <Divider />
-      <Typography variant='body1'>Content coming soon...</Typography>
+      <Typography variant='body1'>Content coming soon... Meanwhile, enjoy some cats :3</Typography>
       <CatCard />
       <ThemeToggleButton />
     </Paper>

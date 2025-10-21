@@ -5,7 +5,6 @@ import {
   CardContent,
   CardActions,
   Button,
-  Typography,
   Skeleton,
   Alert,
 } from '@mui/material';
@@ -73,31 +72,30 @@ export default function CatCard() {
       }}
     >
       {loading ? (
-        <Skeleton variant="rectangular" height={320} />
+        <Skeleton variant="rectangular" height={420} />
       ) : image ? (
         <CardMedia
           component="img"
           image={image.url}
-          sx={{ maxHeight: 420 }}
+          sx={{ height: 420 }}
         />
       ) : (
-        <Skeleton variant="rectangular" height={320} />
+        <Skeleton variant="rectangular" height={420} />
       )}
-      <CardContent sx={{ textAlign: 'center' }}>
-        <Typography variant="h6">Random Cat</Typography>
-        {error && (
+      {error && (
+        <CardContent sx={{ textAlign: 'center' }}>
           <Alert severity="error" sx={{ mt: 1 }}>
             {error}
           </Alert>
-        )}
-      </CardContent>
+        </CardContent>
+      )}
       <CardActions sx={{ justifyContent: 'center' }}>
         <Button 
           variant="contained" 
           onClick={() => void fetchCat()} 
           disabled={loading}
         >
-            {loading ? 'Fetching…' : 'Another one'}
+            {loading ? 'Ps ps ps..' : 'Get a cat'}
         </Button>
       </CardActions>
     </Card>
