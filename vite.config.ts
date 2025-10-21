@@ -39,7 +39,7 @@ export default defineConfig(({ mode }) => {
             // Redux libraries
             redux: ['@reduxjs/toolkit', 'react-redux'],
             // React and routing
-            react: ['react', 'react-dom', 'react-router-dom'],
+            react: ['react', 'react-dom', 'react-router'],
           },
         },
       },
