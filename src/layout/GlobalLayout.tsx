@@ -7,6 +7,8 @@ import { getTheme } from 'modules/theme';
 import { CssBaseline, Box, Container } from '@mui/material';
 import { ThemeProvider } from '@mui/material/styles';
 import { Outlet } from 'react-router';
+import Navbar from './Navbar';
+import Footer from './Footer';
 
 const GlobalLayout: FC = (): ReactElement => {
   const mode = useAppSelector(state => state.theme.mode); // Access the theme mode from Redux state
@@ -38,9 +40,11 @@ const GlobalLayout: FC = (): ReactElement => {
           },
         }}
       >
-        <Container maxWidth="lg" sx={{ py: 4 }}>
+        <Navbar />
+        <Container maxWidth="lg" sx={{ py: 4, flex: 1 }}>
           <Outlet />
         </Container>
+        <Footer />
       </Box>
     </ThemeProvider>
   );
