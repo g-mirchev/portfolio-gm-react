@@ -1,9 +1,9 @@
-import React from 'react';
+import { type FC, type ReactElement } from 'react';
 import { FormControlLabel, Switch, useTheme } from '@mui/material';
 import { toggleTheme } from '../slice';
 import { useAppSelector, useAppDispatch } from 'lib/hooks';
 
-const ThemeToggleButton = (): React.ReactElement => {
+const ThemeToggleButton: FC = (): ReactElement => {
   const dispatch = useAppDispatch();
   const themeMode = useAppSelector(state => state.theme.mode);
   const theme = useTheme();

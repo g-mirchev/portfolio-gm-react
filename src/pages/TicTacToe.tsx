@@ -1,7 +1,7 @@
-import { type FC } from 'react';
+import { type FC, type ReactElement } from 'react';
 import UnderConstruction from 'components/UnderConstruction';
 
-const TicTacToe: FC = () => {
+const TicTacToe: FC = (): ReactElement => {
   return (
     <UnderConstruction
       title="Tic-Tac-Toe"

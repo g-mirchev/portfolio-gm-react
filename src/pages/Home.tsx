@@ -1,4 +1,4 @@
-import { type FC } from 'react';
+import { type FC, type ReactElement } from 'react';
 import { Link } from 'react-router';
 import {
   Typography,
@@ -27,7 +27,7 @@ const sections = [
   },
 ];
 
-const Home: FC = () => {
+const Home: FC = (): ReactElement => {
   return (
     <Box>
       <Box sx={{ textAlign: 'center', mb: 6 }}>

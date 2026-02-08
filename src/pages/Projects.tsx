@@ -1,4 +1,4 @@
-import { type FC } from 'react';
+import { type FC, type ReactElement } from 'react';
 import { Link } from 'react-router';
 import {
   Typography,
@@ -19,7 +19,7 @@ const iconMap: Record<string, React.ReactNode> = {
   pets: <PetsIcon sx={{ fontSize: 48 }} />,
 };
 
-const Projects: FC = () => {
+const Projects: FC = (): ReactElement => {
   return (
     <Box>
       <Box sx={{ mb: 4 }}>

@@ -5,8 +5,9 @@ import Experience from '../pages/Experience';
 import Projects from '../pages/Projects';
 import Cat from '../pages/Cat';
 import TicTacToe from '../pages/TicTacToe';
+import type { FC, ReactElement } from 'react';
 
-const Main = () => {
+const Main: FC = (): ReactElement => {
   return (
     <Routes>
       <Route element={<GlobalLayout />}>
@@ -20,7 +21,7 @@ const Main = () => {
   )
 }
 
-export const Router = () => {
+export const Router: FC = (): ReactElement => {
   return (
       <BrowserRouter>
         <Main />

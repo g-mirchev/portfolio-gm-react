@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useState, type FC, type ReactElement } from 'react';
 import {
   Card,
   CardMedia,
@@ -21,7 +21,7 @@ function isCatImage(value: unknown): value is CatImage {
   );
 }
 
-export default function CatCard() {
+ const CatCard: FC = (): ReactElement => {
   const [image, setImage] = useState<CatImage | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -101,3 +101,5 @@ export default function CatCard() {
     </Card>
   );
 }
+
+export default CatCard;

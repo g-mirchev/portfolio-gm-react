@@ -1,4 +1,4 @@
-import { type FC } from 'react';
+import { type FC, type ReactElement } from 'react';
 import {
   Typography,
   Box,
@@ -13,7 +13,7 @@ import WorkIcon from '@mui/icons-material/Work';
 import SchoolIcon from '@mui/icons-material/School';
 import { experiences, education, skills } from 'data';
 
-const Experience: FC = () => {
+const Experience: FC = (): ReactElement => {
   return (
     <Box>
       <Box sx={{ mb: 4 }}>
