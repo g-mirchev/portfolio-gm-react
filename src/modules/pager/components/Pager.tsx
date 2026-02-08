@@ -113,7 +113,7 @@ const Pager: FC<PagerProps> = ({
             icon={
               <PowerSettingsNewIcon
                 sx={{
-                  fontSize: 12,
+                  fontSize: 14,
                   color: isOn ? theme.icon.powerOn : theme.icon.powerOff,
                 }}
               />
@@ -126,7 +126,7 @@ const Pager: FC<PagerProps> = ({
             icon={
               <NotificationsIcon
                 sx={{
-                  fontSize: 12,
+                  fontSize: 14,
                   color: isOn
                     ? theme.icon.notificationOn
                     : theme.icon.notificationOff,

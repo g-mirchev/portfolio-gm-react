@@ -13,6 +13,7 @@ export interface PagerTheme {
   };
   button: {
     notificationReceived: string;
+    notificationHover: string;
     backgroundOn: string;
     backgroundOff: string;
     hover: string;
@@ -47,6 +48,7 @@ export const classicTheme: PagerTheme = {
   },
   button: {
     notificationReceived: '#ffd900',
+    notificationHover: '#ccae00',
     backgroundOn: '#4a4a4a',
     backgroundOff: '#2a2a2a',
     hover: '#5a5a5a',
@@ -81,6 +83,7 @@ export const pinkTheme: PagerTheme = {
   },
   button: {
     notificationReceived: '#ffd900',
+    notificationHover: '#ccae00',
     backgroundOn: '#5a3a5a',
     backgroundOff: '#3a2a3a',
     hover: '#6a4a6a',

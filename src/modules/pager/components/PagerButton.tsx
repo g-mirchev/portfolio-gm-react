@@ -31,13 +31,15 @@ const PagerButton: FC<PagerButtonProps> = ({
       size="small"
       disabled={disabled}
       sx={{
-        width: 28,
-        height: 16,
+        width: 48,
+        height: 18,
         backgroundColor: getBackgroundColor(),
         borderRadius: 1,
         '&:hover': {
           backgroundColor: !disabled
-            ? theme.button.hover
+            ? hasNotification
+              ? theme.button.notificationHover
+              : theme.button.hover
             : theme.button.backgroundOn,
         },
         '&:disabled': {
