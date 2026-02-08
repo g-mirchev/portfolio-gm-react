@@ -1,11 +1,13 @@
 import { type FC, type ReactElement } from 'react';
 import { IconButton } from '@mui/material';
+import type { PagerTheme } from '../themes';
 
 interface PagerButtonProps {
   icon: ReactElement;
   onClick: () => void;
   isOn: boolean;
   disabled?: boolean;
+  theme: PagerTheme;
 }
 
 const PagerButton: FC<PagerButtonProps> = ({
@@ -13,6 +15,7 @@ const PagerButton: FC<PagerButtonProps> = ({
   onClick,
   isOn,
   disabled,
+  theme,
 }): ReactElement => {
   return (
     <IconButton
@@ -22,13 +25,13 @@ const PagerButton: FC<PagerButtonProps> = ({
       sx={{
         width: 28,
         height: 16,
-        backgroundColor: isOn ? '#4a4a4a' : '#2a2a2a',
+        backgroundColor: isOn ? theme.button.backgroundOn : theme.button.backgroundOff,
         borderRadius: 1,
         '&:hover': {
-          backgroundColor: !disabled ? '#5a5a5a' : '#4a4a4a',
+          backgroundColor: !disabled ? theme.button.hover : theme.button.backgroundOn,
         },
         '&:disabled': {
-          backgroundColor: '#2a2a2a',
+          backgroundColor: theme.button.backgroundOff,
         },
         boxShadow: '0 2px 4px rgba(0,0,0,0.5)',
       }}

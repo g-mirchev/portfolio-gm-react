@@ -1,7 +1,12 @@
 import { type FC, type ReactElement } from 'react';
 import { Box } from '@mui/material';
+import type { PagerTheme } from '../themes';
 
-const BeltClip: FC = (): ReactElement => {
+interface BeltClipProps {
+  theme: PagerTheme;
+}
+
+const BeltClip: FC<BeltClipProps> = ({ theme }): ReactElement => {
   return (
     <Box
       sx={{
@@ -11,10 +16,10 @@ const BeltClip: FC = (): ReactElement => {
         transform: 'translateX(-50%)',
         width: 60,
         height: 25,
-        backgroundColor: '#3d3d3d',
+        backgroundColor: theme.clip.background,
         borderRadius: '0 0 4px 4px',
         boxShadow: '0 4px 8px rgba(0,0,0,0.3)',
-        border: '1px solid #4a4a4a',
+        border: `1px solid ${theme.clip.border}`,
         borderTop: 'none',
       }}
     />

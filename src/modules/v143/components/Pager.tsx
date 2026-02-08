@@ -6,8 +6,13 @@ import {
   PowerSettingsNew as PowerSettingsNewIcon,
   Notifications as NotificationsIcon,
 } from '@mui/icons-material';
+import { classicTheme, type PagerTheme } from '../themes';
 
-const Pager: FC = (): ReactElement => {
+interface PagerProps {
+  theme?: PagerTheme;
+}
+
+const Pager: FC<PagerProps> = ({ theme = classicTheme }): ReactElement => {
   const [isOn, setIsOn] = useState(false);
   const time = useTime(1000);
 
@@ -22,12 +27,12 @@ const Pager: FC = (): ReactElement => {
         sx={{
           width: 280,
           height: 140,
-          backgroundColor: '#1a1a1a',
+          backgroundColor: theme.body.background,
           borderRadius: 3,
           padding: 1.5,
           boxShadow:
             '0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.1)',
-          border: '1px solid #333',
+          border: `1px solid ${theme.body.border}`,
           position: 'relative',
         }}
       >
@@ -44,26 +49,36 @@ const Pager: FC = (): ReactElement => {
           <PagerButton
             icon={
               <PowerSettingsNewIcon
-                sx={{ fontSize: 12, color: isOn ? '#4ade80' : '#c40303' }}
+                sx={{
+                  fontSize: 12,
+                  color: isOn ? theme.icon.powerOn : theme.icon.powerOff,
+                }}
               />
             }
             onClick={() => setIsOn(!isOn)}
             isOn={isOn}
+            theme={theme}
           />
           <PagerButton
             icon={
               <NotificationsIcon
-                sx={{ fontSize: 12, color: isOn ? '#fff' : '#444' }}
+                sx={{
+                  fontSize: 12,
+                  color: isOn
+                    ? theme.icon.notificationOn
+                    : theme.icon.notificationOff,
+                }}
               />
             }
             onClick={() => alert('New message received!')}
             isOn={isOn}
             disabled={!isOn}
+            theme={theme}
           />
         </Box>
-        <LCD displayText={time} isOn={isOn} />
-        <SpeakerGrille />
-        <BeltClip />
+        <LCD displayText={time} isOn={isOn} theme={theme} />
+        <SpeakerGrille theme={theme} />
+        <BeltClip theme={theme} />
       </Box>
     </Box>
   );

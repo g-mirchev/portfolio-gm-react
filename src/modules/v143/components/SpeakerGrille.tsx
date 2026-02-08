@@ -1,7 +1,12 @@
 import type { FC, ReactElement } from 'react';
 import { Box } from '@mui/material';
+import type { PagerTheme } from '../themes';
 
-const SpeakerGrille: FC = (): ReactElement => {
+interface SpeakerGrilleProps {
+  theme: PagerTheme;
+}
+
+const SpeakerGrille: FC<SpeakerGrilleProps> = ({ theme }): ReactElement => {
   return (
     <Box
       sx={{
@@ -17,7 +22,7 @@ const SpeakerGrille: FC = (): ReactElement => {
           sx={{
             width: 3,
             height: 20,
-            backgroundColor: '#2d2d2d',
+            backgroundColor: theme.grille.background,
             borderRadius: 1,
           }}
         />
