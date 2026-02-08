@@ -44,7 +44,7 @@ const Pager: FC = (): ReactElement => {
           <PagerButton
             icon={
               <PowerSettingsNewIcon
-                sx={{ fontSize: 12, color: isOn ? '#4ade80' : '#666' }}
+                sx={{ fontSize: 12, color: isOn ? '#4ade80' : '#c40303' }}
               />
             }
             onClick={() => setIsOn(!isOn)}
