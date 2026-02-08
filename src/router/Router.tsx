@@ -6,6 +6,7 @@ import Experience from '../pages/Experience';
 import Projects from '../pages/Projects';
 import Cat from '../pages/Cat';
 import TicTacToe from '../pages/TicTacToe';
+import V143 from 'pages/V143';
 
 const Main: FC = (): ReactElement => {
   return (
@@ -16,6 +17,7 @@ const Main: FC = (): ReactElement => {
         <Route path="/projects" element={<Projects />} />
         <Route path="/cat" element={<Cat />} />
         <Route path="/tic-tac-toe" element={<TicTacToe />} />
+        <Route path="/v143" element={<V143 />} />
       </Route>
     </Routes>
   );
