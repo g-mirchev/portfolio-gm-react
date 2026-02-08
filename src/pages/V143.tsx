@@ -1,12 +1,24 @@
 import { type FC, type ReactElement } from 'react';
-import { UnderConstruction } from 'components';
+import { VCard } from 'modules/v143';
+import { Box } from '@mui/material';
 
 const V143: FC = (): ReactElement => {
   return (
-    <UnderConstruction
-      title="Hmmm... Something's cooking!"
-      message="Stick around for a sweet surprise. Check back soon!"
-    />
+    <Box>
+      <Box sx={{ textAlign: 'center', mb: 4 }}></Box>
+
+      <Box
+        sx={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          minHeight: 300,
+          pb: 4,
+        }}
+      >
+        <VCard />
+      </Box>
+    </Box>
   );
 };
 
