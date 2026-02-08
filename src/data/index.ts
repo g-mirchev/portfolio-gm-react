@@ -1,3 +1,4 @@
+export { vcardtitle } from './vcontent';
 export { profile, skills } from './profile';
 export { experiences, education } from './experience';
 export type { ExperienceItem, EducationItem } from './experience';
