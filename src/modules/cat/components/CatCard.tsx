@@ -1,4 +1,10 @@
-import { useCallback, useEffect, useState, type FC, type ReactElement } from 'react';
+import {
+  useCallback,
+  useEffect,
+  useState,
+  type FC,
+  type ReactElement,
+} from 'react';
 import {
   Card,
   CardMedia,
@@ -21,7 +27,7 @@ function isCatImage(value: unknown): value is CatImage {
   );
 }
 
- const CatCard: FC = (): ReactElement => {
+const CatCard: FC = (): ReactElement => {
   const [image, setImage] = useState<CatImage | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -33,12 +39,12 @@ function isCatImage(value: unknown): value is CatImage {
 
       const res = await fetch(
         'https://api.thecatapi.com/v1/images/search?size=small&mime_types=jpg,png&order=RANDOM&limit=1',
-        { 
-          signal, 
-          headers: { 
-            'x-api-key': import.meta.env.VITE_APP_CAT_API_KEY 
-          } 
-        }
+        {
+          signal,
+          headers: {
+            'x-api-key': import.meta.env.VITE_APP_CAT_API_KEY,
+          },
+        },
       );
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
 
@@ -65,20 +71,16 @@ function isCatImage(value: unknown): value is CatImage {
   }, [fetchCat]);
 
   return (
-    <Card 
-      sx={{ 
+    <Card
+      sx={{
         maxWidth: 520,
-        mx: 'auto' 
+        mx: 'auto',
       }}
     >
       {loading ? (
         <Skeleton variant="rectangular" height={420} />
       ) : image ? (
-        <CardMedia
-          component="img"
-          image={image.url}
-          sx={{ height: 420 }}
-        />
+        <CardMedia component="img" image={image.url} sx={{ height: 420 }} />
       ) : (
         <Skeleton variant="rectangular" height={420} />
       )}
@@ -90,16 +92,16 @@ function isCatImage(value: unknown): value is CatImage {
         </CardContent>
       )}
       <CardActions sx={{ justifyContent: 'center' }}>
-        <Button 
-          variant="contained" 
-          onClick={() => void fetchCat()} 
+        <Button
+          variant="contained"
+          onClick={() => void fetchCat()}
           disabled={loading}
         >
-            {loading ? 'Ps ps ps..' : 'Get a cat'}
+          {loading ? 'Ps ps ps..' : 'Get a cat'}
         </Button>
       </CardActions>
     </Card>
   );
-}
+};
 
 export default CatCard;

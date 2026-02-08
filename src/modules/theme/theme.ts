@@ -29,14 +29,15 @@ export const getTheme = (mode: PaletteMode = 'light') =>
         },
       },
       typography: {
-        fontFamily: 'Inter, Space Grotesk, ui-sans-serif, system-ui, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial',
-        h1: { 
-          fontWeight: 800, 
-          letterSpacing: '-0.02em' 
+        fontFamily:
+          'Inter, Space Grotesk, ui-sans-serif, system-ui, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial',
+        h1: {
+          fontWeight: 800,
+          letterSpacing: '-0.02em',
         },
-        button: { 
-          textTransform: 'none', 
-          fontWeight: 600 
+        button: {
+          textTransform: 'none',
+          fontWeight: 600,
         },
         body1: {
           fontSize: '1rem',
@@ -45,32 +46,35 @@ export const getTheme = (mode: PaletteMode = 'light') =>
       },
       components: {
         MuiButton: {
-          defaultProps: { 
-            disableElevation: true 
+          defaultProps: {
+            disableElevation: true,
           },
-          styleOverrides: { 
-            root: { 
-              borderRadius: 12, 
-              textTransform: 'none' } 
+          styleOverrides: {
+            root: {
+              borderRadius: 12,
+              textTransform: 'none',
+            },
           },
         },
         MuiCard: {
-          styleOverrides: { 
-            root: { 
-              borderRadius: 20, 
-              border: '1px solid', 
-              borderColor: 'divider' } 
+          styleOverrides: {
+            root: {
+              borderRadius: 20,
+              border: '1px solid',
+              borderColor: 'divider',
+            },
           },
         },
         MuiLink: {
-          styleOverrides: { 
-            root: { 
-              textDecoration: 'none', 
-              '&:hover': { 
-                textDecoration: 'underline' 
-              } 
-            } 
+          styleOverrides: {
+            root: {
+              textDecoration: 'none',
+              '&:hover': {
+                textDecoration: 'underline',
+              },
+            },
           },
         },
       },
-  }));
+    }),
+  );

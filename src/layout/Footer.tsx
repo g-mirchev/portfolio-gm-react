@@ -35,7 +35,10 @@ const Footer: FC = () => {
             rel="noopener noreferrer"
             aria-label="GitHub"
             size="small"
-            sx={{ color: 'text.secondary', '&:hover': { color: 'primary.main' } }}
+            sx={{
+              color: 'text.secondary',
+              '&:hover': { color: 'primary.main' },
+            }}
           >
             <GitHubIcon />
           </IconButton>
@@ -46,7 +49,10 @@ const Footer: FC = () => {
             rel="noopener noreferrer"
             aria-label="LinkedIn"
             size="small"
-            sx={{ color: 'text.secondary', '&:hover': { color: 'primary.main' } }}
+            sx={{
+              color: 'text.secondary',
+              '&:hover': { color: 'primary.main' },
+            }}
           >
             <LinkedInIcon />
           </IconButton>

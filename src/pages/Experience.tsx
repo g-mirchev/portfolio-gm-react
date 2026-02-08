@@ -28,7 +28,13 @@ const Experience: FC = (): ReactElement => {
       <Grid container spacing={4}>
         <Grid size={{ xs: 12, md: 8 }}>
           <Box sx={{ mb: 6 }}>
-            <Typography variant="h4" component="h2" gutterBottom fontWeight={600} sx={{ mb: 3 }}>
+            <Typography
+              variant="h4"
+              component="h2"
+              gutterBottom
+              fontWeight={600}
+              sx={{ mb: 3 }}
+            >
               Work
             </Typography>
             <Stack spacing={3}>
@@ -52,10 +58,18 @@ const Experience: FC = (): ReactElement => {
                         <Typography variant="subtitle1" color="primary">
                           {exp.company}
                         </Typography>
-                        <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
+                        <Typography
+                          variant="body2"
+                          color="text.secondary"
+                          sx={{ mb: 1 }}
+                        >
                           {exp.location} | {exp.period}
                         </Typography>
-                        <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
+                        <Typography
+                          variant="body2"
+                          color="text.secondary"
+                          sx={{ mb: 2 }}
+                        >
                           {exp.description}
                         </Typography>
                         <Stack direction="row" flexWrap="wrap" gap={0.5}>
@@ -78,7 +92,13 @@ const Experience: FC = (): ReactElement => {
           </Box>
 
           <Box>
-            <Typography variant="h4" component="h2" gutterBottom fontWeight={600} sx={{ mb: 3 }}>
+            <Typography
+              variant="h4"
+              component="h2"
+              gutterBottom
+              fontWeight={600}
+              sx={{ mb: 3 }}
+            >
               Education
             </Typography>
             <Stack spacing={3}>
@@ -102,7 +122,11 @@ const Experience: FC = (): ReactElement => {
                         <Typography variant="subtitle1" color="primary">
                           {edu.institution}
                         </Typography>
-                        <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
+                        <Typography
+                          variant="body2"
+                          color="text.secondary"
+                          sx={{ mb: 1 }}
+                        >
                           {edu.location} | {edu.period}
                         </Typography>
                         <Typography variant="body2" color="text.secondary">
@@ -129,7 +153,13 @@ const Experience: FC = (): ReactElement => {
               borderRadius: 3,
             }}
           >
-            <Typography variant="h5" component="h2" gutterBottom fontWeight={600} sx={{ mb: 2 }}>
+            <Typography
+              variant="h5"
+              component="h2"
+              gutterBottom
+              fontWeight={600}
+              sx={{ mb: 2 }}
+            >
               Skills
             </Typography>
             <Stack direction="row" flexWrap="wrap" gap={1}>

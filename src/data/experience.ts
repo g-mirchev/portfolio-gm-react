@@ -23,7 +23,15 @@ export const experiences: ExperienceItem[] = [
     period: 'November 2023 – Present',
     description:
       'Sole in-house developer for the SMARTester department. Architecting and deploying production-grade software across web, desktop, and mobile platforms with IoT device integration via Bluetooth Low Energy and TCP protocols.',
-    technologies: ['React', 'Electron', 'React Native', 'Node.js', 'PostgreSQL', 'AWS', 'Ruby on Rails'],
+    technologies: [
+      'React',
+      'Electron',
+      'React Native',
+      'Node.js',
+      'PostgreSQL',
+      'AWS',
+      'Ruby on Rails',
+    ],
   },
   {
     title: 'Software Developer',
@@ -32,7 +40,15 @@ export const experiences: ExperienceItem[] = [
     period: 'August 2020 – November 2023',
     description:
       'Designed and optimised web applications using Node.js with Angular and React frontends. Led releases for AWS-powered solutions and improved React Native app performance through a major rewrite.',
-    technologies: ['Angular', 'React Native', 'Vue.js', 'Node.js', 'MongoDB', 'PostgreSQL', 'AWS'],
+    technologies: [
+      'Angular',
+      'React Native',
+      'Vue.js',
+      'Node.js',
+      'MongoDB',
+      'PostgreSQL',
+      'AWS',
+    ],
   },
 ];
 

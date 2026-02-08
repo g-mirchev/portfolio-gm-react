@@ -1,5 +1,4 @@
-
-import { type FC, type ReactElement} from 'react';
+import { type FC, type ReactElement } from 'react';
 import { useAppSelector } from 'lib/hooks';
 import { getTheme } from 'modules/theme';
 
@@ -11,7 +10,7 @@ import Navbar from './Navbar';
 import Footer from './Footer';
 
 const GlobalLayout: FC = (): ReactElement => {
-  const mode = useAppSelector(state => state.theme.mode); // Access the theme mode from Redux state
+  const mode = useAppSelector((state) => state.theme.mode); // Access the theme mode from Redux state
   const theme = getTheme(mode);
 
   return (
@@ -48,6 +47,6 @@ const GlobalLayout: FC = (): ReactElement => {
       </Box>
     </ThemeProvider>
   );
-}
+};
 
-export default GlobalLayout
+export default GlobalLayout;

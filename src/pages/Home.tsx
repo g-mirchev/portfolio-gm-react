@@ -40,7 +40,13 @@ const Home: FC = (): ReactElement => {
         <Typography
           variant="body1"
           color="text.secondary"
-          sx={{ maxWidth: 700, mx: 'auto', mt: 2, lineHeight: 1.8, whiteSpace: 'pre-line' }}
+          sx={{
+            maxWidth: 700,
+            mx: 'auto',
+            mt: 2,
+            lineHeight: 1.8,
+            whiteSpace: 'pre-line',
+          }}
         >
           {profile.bio}
         </Typography>
@@ -74,7 +80,12 @@ const Home: FC = (): ReactElement => {
                   <Box sx={{ color: 'primary.main', mb: 2 }}>
                     {section.icon}
                   </Box>
-                  <Typography variant="h5" component="h2" gutterBottom fontWeight={600}>
+                  <Typography
+                    variant="h5"
+                    component="h2"
+                    gutterBottom
+                    fontWeight={600}
+                  >
                     {section.title}
                   </Typography>
                   <Typography variant="body1" color="text.secondary">

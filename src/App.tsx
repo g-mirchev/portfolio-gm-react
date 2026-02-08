@@ -1,4 +1,4 @@
-import { type FC, type ReactElement} from 'react';
+import { type FC, type ReactElement } from 'react';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import { store, persistor } from './lib/store';
@@ -19,14 +19,14 @@ import Router from './router/Router';
  *
  * @returns {ReactElement} The root component that provides necessary context providers for the app.
  */
-const App: FC  = (): ReactElement => {
+const App: FC = (): ReactElement => {
   return (
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
-        <Router/>
+        <Router />
       </PersistGate>
     </Provider>
-  )
-}
+  );
+};
 
-export default App
+export default App;

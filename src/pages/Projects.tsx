@@ -1,4 +1,4 @@
-import { type FC, type ReactElement } from 'react';
+import React, { type FC, type ReactElement } from 'react';
 import { Link } from 'react-router';
 import {
   Typography,
@@ -27,7 +27,8 @@ const Projects: FC = (): ReactElement => {
           Projects
         </Typography>
         <Typography variant="body1" color="text.secondary">
-          A collection of fun projects showcasing React, TypeScript, and Material-UI.
+          A collection of fun projects showcasing React, TypeScript, and
+          Material-UI.
         </Typography>
       </Box>
 
@@ -47,16 +48,30 @@ const Projects: FC = (): ReactElement => {
               <CardActionArea
                 component={Link}
                 to={project.path}
-                sx={{ height: '100%', display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}
+                sx={{
+                  height: '100%',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'flex-start',
+                }}
               >
                 <CardContent sx={{ width: '100%' }}>
                   <Box sx={{ color: 'primary.main', mb: 2 }}>
                     {iconMap[project.icon]}
                   </Box>
-                  <Typography variant="h5" component="h2" gutterBottom fontWeight={600}>
+                  <Typography
+                    variant="h5"
+                    component="h2"
+                    gutterBottom
+                    fontWeight={600}
+                  >
                     {project.title}
                   </Typography>
-                  <Typography variant="body1" color="text.secondary" sx={{ mb: 2 }}>
+                  <Typography
+                    variant="body1"
+                    color="text.secondary"
+                    sx={{ mb: 2 }}
+                  >
                     {project.description}
                   </Typography>
                   <Stack direction="row" flexWrap="wrap" gap={0.5}>

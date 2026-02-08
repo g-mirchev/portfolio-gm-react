@@ -5,7 +5,7 @@ import { useAppSelector, useAppDispatch } from 'lib/hooks';
 
 const ThemeToggleButton: FC = (): ReactElement => {
   const dispatch = useAppDispatch();
-  const themeMode = useAppSelector(state => state.theme.mode);
+  const themeMode = useAppSelector((state) => state.theme.mode);
   const theme = useTheme();
   const handleChange = () => {
     dispatch(toggleTheme());
