@@ -6,7 +6,7 @@ import {
   PowerSettingsNew as PowerSettingsNewIcon,
   Notifications as NotificationsIcon,
 } from '@mui/icons-material';
-import { classicTheme, type PagerTheme } from '../themes';
+import { classicTheme, type PagerTheme } from '..';
 
 interface PagerProps {
   theme?: PagerTheme;

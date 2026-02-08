@@ -83,7 +83,7 @@ export const pinkTheme: PagerTheme = {
     hover: '#6a4a6a',
   },
   icon: {
-    powerOn: '#ff69b4',
+    powerOn: '#4ade80',
     powerOff: '#8b2252',
     notificationOn: '#fff',
     notificationOff: '#5a3a5a',

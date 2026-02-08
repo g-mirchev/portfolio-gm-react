@@ -25,10 +25,14 @@ const PagerButton: FC<PagerButtonProps> = ({
       sx={{
         width: 28,
         height: 16,
-        backgroundColor: isOn ? theme.button.backgroundOn : theme.button.backgroundOff,
+        backgroundColor: isOn
+          ? theme.button.backgroundOn
+          : theme.button.backgroundOff,
         borderRadius: 1,
         '&:hover': {
-          backgroundColor: !disabled ? theme.button.hover : theme.button.backgroundOn,
+          backgroundColor: !disabled
+            ? theme.button.hover
+            : theme.button.backgroundOn,
         },
         '&:disabled': {
           backgroundColor: theme.button.backgroundOff,
