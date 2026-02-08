@@ -1,4 +1,4 @@
-import { type FC } from 'react';
+import { type FC, type ReactElement } from 'react';
 import { Link, useLocation } from 'react-router';
 import {
   AppBar,
@@ -20,7 +20,7 @@ import { useState } from 'react';
 import { ThemeToggleButton } from 'modules/theme';
 import { navItems, profile } from 'data';
 
-const Navbar: FC = () => {
+const Navbar: FC = (): ReactElement => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));

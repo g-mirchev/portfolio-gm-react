@@ -1,10 +1,10 @@
-import { type FC } from 'react';
+import { type FC, type ReactElement } from 'react';
 import { Box, IconButton, Typography, Stack } from '@mui/material';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import { profile } from 'data';
 
-const Footer: FC = () => {
+const Footer: FC = (): ReactElement => {
   return (
     <Box
       component="footer"
