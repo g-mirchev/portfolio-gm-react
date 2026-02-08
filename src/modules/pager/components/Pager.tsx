@@ -134,6 +134,7 @@ const Pager: FC<PagerProps> = ({
               />
             }
             onClick={handleReceiverClick}
+            hasNotification={pagerState === PAGER_STATES.NOTIFY}
             isOn={isOn}
             disabled={!isOn}
             theme={theme}

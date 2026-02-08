@@ -8,6 +8,7 @@ interface PagerButtonProps {
   isOn: boolean;
   disabled?: boolean;
   theme: PagerTheme;
+  hasNotification?: boolean;
 }
 
 const PagerButton: FC<PagerButtonProps> = ({
@@ -16,7 +17,14 @@ const PagerButton: FC<PagerButtonProps> = ({
   isOn,
   disabled,
   theme,
+  hasNotification,
 }): ReactElement => {
+  const getBackgroundColor = () => {
+    if (hasNotification) return theme.button.notificationReceived;
+    if (isOn) return theme.button.backgroundOn;
+    return theme.button.backgroundOff;
+  };
+
   return (
     <IconButton
       onClick={onClick}
@@ -25,9 +33,7 @@ const PagerButton: FC<PagerButtonProps> = ({
       sx={{
         width: 28,
         height: 16,
-        backgroundColor: isOn
-          ? theme.button.backgroundOn
-          : theme.button.backgroundOff,
+        backgroundColor: getBackgroundColor(),
         borderRadius: 1,
         '&:hover': {
           backgroundColor: !disabled

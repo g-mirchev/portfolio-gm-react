@@ -12,6 +12,7 @@ export interface PagerTheme {
     textShadow: string;
   };
   button: {
+    notificationReceived: string;
     backgroundOn: string;
     backgroundOff: string;
     hover: string;
@@ -45,6 +46,7 @@ export const classicTheme: PagerTheme = {
     textShadow: 'rgba(45,58,41,0.5)',
   },
   button: {
+    notificationReceived: '#ffd900',
     backgroundOn: '#4a4a4a',
     backgroundOff: '#2a2a2a',
     hover: '#5a5a5a',
@@ -78,6 +80,7 @@ export const pinkTheme: PagerTheme = {
     textShadow: 'rgba(107,42,74,0.5)',
   },
   button: {
+    notificationReceived: '#ffd900',
     backgroundOn: '#5a3a5a',
     backgroundOff: '#3a2a3a',
     hover: '#6a4a6a',
