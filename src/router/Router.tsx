@@ -6,18 +6,18 @@ import Experience from '../pages/Experience';
 import Projects from '../pages/Projects';
 import Cat from '../pages/Cat';
 import TicTacToe from '../pages/TicTacToe';
-import V143 from 'pages/V143';
+import V1426 from 'pages/V1426';
 
 const Main: FC = (): ReactElement => {
   return (
     <Routes>
       <Route element={<GlobalLayout />}>
-        <Route path="/" element={<Home />} />
-        <Route path="/experience" element={<Experience />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/cat" element={<Cat />} />
-        <Route path="/tic-tac-toe" element={<TicTacToe />} />
-        <Route path="/v143" element={<V143 />} />
+        <Route index element={<Home />} />
+        <Route path="experience" element={<Experience />} />
+        <Route path="projects" element={<Projects />} />
+        <Route path="cat" element={<Cat />} />
+        <Route path="tic-tac-toe" element={<TicTacToe />} />
+        <Route path="v1426" element={<V1426 />} />
       </Route>
     </Routes>
   );

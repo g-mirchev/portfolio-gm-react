@@ -1,8 +1,8 @@
 import { type FC, type ReactElement } from 'react';
-import { VCard } from 'modules/v143';
+import { VCard } from 'modules/v1426';
 import { Box } from '@mui/material';
 
-const V143: FC = (): ReactElement => {
+const V1426: FC = (): ReactElement => {
   return (
     <Box>
       <Box
@@ -20,4 +20,4 @@ const V143: FC = (): ReactElement => {
   );
 };
 
-export default V143;
+export default V1426;
