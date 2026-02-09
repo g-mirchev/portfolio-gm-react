@@ -74,7 +74,7 @@ const VCard: FC = (): ReactElement => {
               sx={{
                 fontFamily: 'Bad Script, cursive',
                 fontSize: 26,
-                fontWeight: 550,
+                fontWeight: 600,
                 color: '#b41414',
               }}
             >
