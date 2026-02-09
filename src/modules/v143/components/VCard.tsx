@@ -41,6 +41,21 @@ const VCard: FC = (): ReactElement => {
             backgroundColor: '#f7d5ee',
             width: '400px',
             height: '200px',
+            borderRadius: 2,
+            mask: `
+              radial-gradient(circle at 0 50%, transparent 8px, #000 8.5px) 0 calc(50% - 15px) / 100% 30px repeat-y,
+              radial-gradient(circle at 100% 50%, transparent 8px, #000 8.5px) 0 calc(50% - 15px) / 100% 30px repeat-y,
+              radial-gradient(circle at 50% 0, transparent 8px, #000 8.5px) calc(50% - 15px) 0 / 30px 100% repeat-x,
+              radial-gradient(circle at 50% 100%, transparent 8px, #000 8.5px) calc(50% - 15px) 0 / 30px 100% repeat-x
+            `,
+            maskComposite: 'intersect',
+            WebkitMask: `
+              radial-gradient(circle at 0 50%, transparent 8px, #000 8.5px) 0 calc(50% - 15px) / 100% 30px repeat-y,
+              radial-gradient(circle at 100% 50%, transparent 8px, #000 8.5px) 0 calc(50% - 15px) / 100% 30px repeat-y,
+              radial-gradient(circle at 50% 0, transparent 8px, #000 8.5px) calc(50% - 15px) 0 / 30px 100% repeat-x,
+              radial-gradient(circle at 50% 100%, transparent 8px, #000 8.5px) calc(50% - 15px) 0 / 30px 100% repeat-x
+            `,
+            WebkitMaskComposite: 'source-in',
           }}
         >
           {vcardtitle.map((line, index) => (
@@ -49,6 +64,8 @@ const VCard: FC = (): ReactElement => {
               sx={{
                 fontFamily: 'Bad Script, cursive',
                 fontSize: 26,
+                fontWeight: 550,
+                color: '#b41414',
               }}
             >
               {line}
