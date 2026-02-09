@@ -20,11 +20,7 @@ const PAGER_STATES = {
   MESSAGE: 'MESSAGE',
 };
 
-const Pager: FC<PagerProps> = ({
-  theme = classicTheme,
-  messages,
-  onPowerClick,
-}): ReactElement => {
+const Pager: FC<PagerProps> = ({ theme = classicTheme, messages, onPowerClick }): ReactElement => {
   const [isOn, setIsOn] = useState(false);
   const [isViewingMessage, setIsViewingMessage] = useState(false);
   const [currentMessageIndex, setCurrentMessageIndex] = useState(0);
@@ -70,10 +66,7 @@ const Pager: FC<PagerProps> = ({
       setCurrentMessageIndex(0);
     } else if (pagerState === PAGER_STATES.MESSAGE) {
       if (messages) {
-        const nextIndex =
-          messages.length > currentMessageIndex + 1
-            ? currentMessageIndex + 1
-            : 0;
+        const nextIndex = messages.length > currentMessageIndex + 1 ? currentMessageIndex + 1 : 0;
         setCurrentMessageIndex(nextIndex);
       }
     }
@@ -93,8 +86,7 @@ const Pager: FC<PagerProps> = ({
           backgroundColor: theme.body.background,
           borderRadius: 3,
           padding: 1.5,
-          boxShadow:
-            '0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.1)',
+          boxShadow: '0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.1)',
           border: `1px solid ${theme.body.border}`,
           position: 'relative',
         }}
@@ -127,9 +119,7 @@ const Pager: FC<PagerProps> = ({
               <NotificationsIcon
                 sx={{
                   fontSize: 14,
-                  color: isOn
-                    ? theme.icon.notificationOn
-                    : theme.icon.notificationOff,
+                  color: isOn ? theme.icon.notificationOn : theme.icon.notificationOff,
                 }}
               />
             }

@@ -1,5 +1,5 @@
 import { useState, type FC, type ReactElement } from 'react';
-import { Pager, pinkTheme } from 'modules/pager';
+import { Pager, pinkTheme, classicTheme } from 'modules/pager';
 import { Box, Paper, Typography } from '@mui/material';
 import { vcardtitle } from 'data/vcontent';
 
@@ -17,17 +17,46 @@ const VCard: FC = (): ReactElement => {
   };
 
   return (
-    <Box sx={{ perspective: '1000px' }}>
-      <Paper sx={{ textAlign: 'center', mb: 4 }}>
-        {vcardtitle.map((line, index) => (
-          <Typography key={`${index}-vcardtitle`}>{line}</Typography>
-        ))}
+    <Box>
+      <Paper
+        elevation={6}
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'space-evenly',
+          mb: 4,
+          backgroundColor: '#f800c2de', // Dark pink background
+          width: '600px',
+          height: '800px',
+        }}
+      >
+        <Paper
+          elevation={9}
+          sx={{
+            display: 'inline-block',
+            textAlign: 'center',
+            p: 3,
+            mb: 4,
+            backgroundColor: '#f7d5ee',
+            width: '400px',
+            height: '200px',
+          }}
+        >
+          {vcardtitle.map((line, index) => (
+            <Typography
+              key={`${index}-vcardtitle`}
+              sx={{
+                fontFamily: 'Bad Script, cursive',
+                fontSize: 26,
+              }}
+            >
+              {line}
+            </Typography>
+          ))}
+        </Paper>
+        <Pager theme={pinkTheme} messages={pagerMessages} onPowerClick={onPowerClick} />
       </Paper>
-      <Pager
-        theme={pinkTheme}
-        messages={pagerMessages}
-        onPowerClick={onPowerClick}
-      />
     </Box>
   );
 };

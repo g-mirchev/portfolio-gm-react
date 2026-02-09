@@ -9,6 +9,7 @@ import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import '@fontsource/dseg7-classic/400.css';
 import '@fontsource/dseg7-classic/700.css';
+import '@fontsource/bad-script/400.css';
 
 /** Styles */
 import './index.css';
@@ -16,5 +17,5 @@ import './index.css';
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <App />
-  </StrictMode>,
+  </StrictMode>
 );
