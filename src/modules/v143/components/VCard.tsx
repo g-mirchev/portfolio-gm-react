@@ -16,8 +16,21 @@ const VCard: FC = (): ReactElement => {
     }
   };
 
+  const wavyMask = `
+    radial-gradient(circle at 0 50%, transparent 8px, #000 8.5px) 0 calc(50% - 15px) / 100% 30px repeat-y,
+    radial-gradient(circle at 100% 50%, transparent 8px, #000 8.5px) 0 calc(50% - 15px) / 100% 30px repeat-y,
+    radial-gradient(circle at 50% 0, transparent 8px, #000 8.5px) calc(50% - 15px) 0 / 30px 100% repeat-x,
+    radial-gradient(circle at 50% 100%, transparent 8px, #000 8.5px) calc(50% - 15px) 0 / 30px 100% repeat-x
+  `;
+
   return (
-    <Box>
+    <Box
+      sx={{
+        display: 'flex',
+        justifyContent: 'center',
+        width: '100%',
+      }}
+    >
       <Paper
         elevation={6}
         sx={{
@@ -27,35 +40,32 @@ const VCard: FC = (): ReactElement => {
           justifyContent: 'space-evenly',
           mb: 4,
           backgroundColor: '#f800c2de', // Dark pink background
-          width: '600px',
-          height: '800px',
+          width: { xs: '100%', sm: '600px' },
+          maxWidth: '600px',
+          height: { xs: 'auto', sm: '800px' },
+          minHeight: '600px',
+          py: { xs: 4, sm: 0 },
         }}
       >
         <Paper
           elevation={9}
           sx={{
-            display: 'inline-block',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
             textAlign: 'center',
             p: 3,
             mb: 4,
             backgroundColor: '#f7d5ee',
-            width: '400px',
+            width: { xs: '90%', sm: '400px' },
+            maxWidth: '400px',
             height: '200px',
             borderRadius: 2,
-            mask: `
-              radial-gradient(circle at 0 50%, transparent 8px, #000 8.5px) 0 calc(50% - 15px) / 100% 30px repeat-y,
-              radial-gradient(circle at 100% 50%, transparent 8px, #000 8.5px) 0 calc(50% - 15px) / 100% 30px repeat-y,
-              radial-gradient(circle at 50% 0, transparent 8px, #000 8.5px) calc(50% - 15px) 0 / 30px 100% repeat-x,
-              radial-gradient(circle at 50% 100%, transparent 8px, #000 8.5px) calc(50% - 15px) 0 / 30px 100% repeat-x
-            `,
-            maskComposite: 'intersect',
-            WebkitMask: `
-              radial-gradient(circle at 0 50%, transparent 8px, #000 8.5px) 0 calc(50% - 15px) / 100% 30px repeat-y,
-              radial-gradient(circle at 100% 50%, transparent 8px, #000 8.5px) 0 calc(50% - 15px) / 100% 30px repeat-y,
-              radial-gradient(circle at 50% 0, transparent 8px, #000 8.5px) calc(50% - 15px) 0 / 30px 100% repeat-x,
-              radial-gradient(circle at 50% 100%, transparent 8px, #000 8.5px) calc(50% - 15px) 0 / 30px 100% repeat-x
-            `,
+            WebkitMask: wavyMask,
+            mask: wavyMask,
             WebkitMaskComposite: 'source-in',
+            maskComposite: 'intersect',
           }}
         >
           {vcardtitle.map((line, index) => (
