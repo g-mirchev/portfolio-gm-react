@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls -la \"c:\\\\Gogo\\\\workspace\\\\portfolio-gm-react\\\\src\\\\modules\\\\tictactoe\"\" && echo \"---COMPONENTS---\" && ls -la \"c:Gogoworkspaceportfolio-gm-reactsrcmodulestictactoecomponents\"\")",
+      "Bash(find:*)"
+    ]
+  }
+}

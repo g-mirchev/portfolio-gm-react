@@ -85,7 +85,7 @@ export default defineConfig([globalIgnores(["**/build", "**/dist", "**/eslint.co
         "prefer-rest-params": "error",
         "prefer-promise-reject-errors": "error",
         "require-await": "error",
-        "prettier/prettier": ["error", { "singleQuote": true }],
+        "prettier/prettier": ["error", { "singleQuote": true, "endOfLine": "auto" }],
     },
 }, {
     files: ["**/*.test.*"],
