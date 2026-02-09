@@ -1,5 +1,5 @@
 import { useState, type FC, type ReactElement } from 'react';
-import { Pager, pinkTheme, classicTheme } from 'modules/pager';
+import { Pager, pinkTheme } from 'modules/pager';
 import { Box, Paper, Typography } from '@mui/material';
 import { vcardtitle } from 'data/vcontent';
 
