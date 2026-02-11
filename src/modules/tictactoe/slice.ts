@@ -1,24 +1,17 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-interface TicTacToePlayer {
-  symbol: 'X' | 'O' | null;
-  score: number;
-}
+import type { TicTacToePlayer, TicTacToeWinner, TicTacToeBoard } from '.';
 
 interface TicTacToeState {
-  board: (null | 'X' | 'O')[][];
+  board: TicTacToeBoard;
   player1: TicTacToePlayer;
   player2: TicTacToePlayer;
-  winner: 'X' | 'O' | 'Draw' | null;
+  winner: TicTacToeWinner;
   isMultiplayer: boolean;
 }
 
 export const initialState: TicTacToeState = {
-  board: [
-    [null, null, null],
-    [null, null, null],
-    [null, null, null],
-  ],
+  board: Array(9).fill(null),
   player1: { symbol: null, score: 0 },
   player2: { symbol: null, score: 0 },
   winner: null,
