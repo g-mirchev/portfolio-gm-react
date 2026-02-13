@@ -39,7 +39,7 @@ const VCard: FC = (): ReactElement => {
           alignItems: 'center',
           justifyContent: 'space-evenly',
           mb: 4,
-          backgroundColor: '#f800c2de', // Dark pink background
+          backgroundColor: '#ff89cade',
           width: { xs: '100%', sm: '600px' },
           maxWidth: '600px',
           height: { xs: 'auto', sm: '800px' },

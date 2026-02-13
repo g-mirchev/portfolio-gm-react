@@ -4,6 +4,8 @@ import { Box } from '@mui/material';
 import { useTime } from 'hooks';
 import {
   PowerSettingsNew as PowerSettingsNewIcon,
+  NavigateBefore as NavigateBeforeIcon,
+  NavigateNext as NavigateNextIcon,
   Notifications as NotificationsIcon,
 } from '@mui/icons-material';
 import { classicTheme, type PagerTheme } from '..';
@@ -40,7 +42,7 @@ const Pager: FC<PagerProps> = ({ theme = classicTheme, messages, onPowerClick })
 
   const messageText = useMemo(() => {
     return messages && messages.length > 0
-      ? `${currentMessageIndex + 1}: ${messages[currentMessageIndex]}`
+      ? `${currentMessageIndex + 1}/${messages.length}: ${messages[currentMessageIndex]}`
       : '';
   }, [messages, currentMessageIndex]);
 
@@ -64,11 +66,19 @@ const Pager: FC<PagerProps> = ({ theme = classicTheme, messages, onPowerClick })
     if (pagerState === PAGER_STATES.NOTIFY) {
       setIsViewingMessage(true);
       setCurrentMessageIndex(0);
-    } else if (pagerState === PAGER_STATES.MESSAGE) {
-      if (messages) {
-        const nextIndex = messages.length > currentMessageIndex + 1 ? currentMessageIndex + 1 : 0;
-        setCurrentMessageIndex(nextIndex);
+    }
+  };
+
+  const handleNavigationClick = (direction: 'prev' | 'next') => {
+    if (pagerState === PAGER_STATES.MESSAGE && messages) {
+      const messageCount = messages.length;
+      let newIndex = currentMessageIndex;
+      if (direction === 'prev') {
+        newIndex = (currentMessageIndex - 1 + messageCount) % messageCount;
+      } else {
+        newIndex = (currentMessageIndex + 1) % messageCount;
       }
+      setCurrentMessageIndex(newIndex);
     }
   };
 
@@ -98,36 +108,35 @@ const Pager: FC<PagerProps> = ({ theme = classicTheme, messages, onPowerClick })
             left: '50%',
             transform: 'translateX(-50%)',
             display: 'flex',
-            gap: 9,
+            gap: 2.5,
           }}
         >
           <PagerButton
-            icon={
-              <PowerSettingsNewIcon
-                sx={{
-                  fontSize: 14,
-                  color: isOn ? theme.icon.powerOn : theme.icon.powerOff,
-                }}
-              />
-            }
+            icon={<PowerSettingsNewIcon sx={{ fontSize: 14 }} />}
             onClick={handlePowerClick}
             isOn={isOn}
-            theme={theme}
+            buttonTheme={theme.powerButton}
           />
+          <Box sx={{ display: 'flex', gap: 0.5 }}>
+            <PagerButton
+              icon={<NavigateBeforeIcon sx={{ fontSize: 14 }} />}
+              onClick={() => handleNavigationClick('prev')}
+              isOn={isOn && pagerState === PAGER_STATES.MESSAGE}
+              buttonTheme={theme.navButton}
+            />
+            <PagerButton
+              icon={<NavigateNextIcon sx={{ fontSize: 14 }} />}
+              onClick={() => handleNavigationClick('next')}
+              isOn={isOn && pagerState === PAGER_STATES.MESSAGE}
+              buttonTheme={theme.navButton}
+            />
+          </Box>
           <PagerButton
-            icon={
-              <NotificationsIcon
-                sx={{
-                  fontSize: 14,
-                  color: isOn ? theme.icon.notificationOn : theme.icon.notificationOff,
-                }}
-              />
-            }
+            icon={<NotificationsIcon sx={{ fontSize: 14 }} />}
             onClick={handleReceiverClick}
-            hasNotification={pagerState === PAGER_STATES.NOTIFY}
-            isOn={isOn}
-            disabled={!isOn}
-            theme={theme}
+            isOn={isOn && !!messages?.length}
+            disabled={!isOn || !messages?.length}
+            buttonTheme={theme.receiverButton}
           />
         </Box>
         <LCD displayText={displayText || time} isOn={isOn} theme={theme} />

@@ -1,14 +1,13 @@
 import { type FC, type ReactElement } from 'react';
 import { IconButton } from '@mui/material';
-import type { PagerTheme } from '../themes';
+import type { PagerButtonTheme } from '../themes';
 
 interface PagerButtonProps {
   icon: ReactElement;
   onClick: () => void;
   isOn: boolean;
   disabled?: boolean;
-  theme: PagerTheme;
-  hasNotification?: boolean;
+  buttonTheme: PagerButtonTheme;
 }
 
 const PagerButton: FC<PagerButtonProps> = ({
@@ -16,34 +15,25 @@ const PagerButton: FC<PagerButtonProps> = ({
   onClick,
   isOn,
   disabled,
-  theme,
-  hasNotification,
+  buttonTheme,
 }): ReactElement => {
-  const getBackgroundColor = () => {
-    if (hasNotification) return theme.button.notificationReceived;
-    if (isOn) return theme.button.backgroundOn;
-    return theme.button.backgroundOff;
-  };
-
   return (
     <IconButton
       onClick={onClick}
       size="small"
       disabled={disabled}
+      disableRipple
       sx={{
         width: 48,
         height: 18,
-        backgroundColor: getBackgroundColor(),
+        backgroundColor: isOn ? buttonTheme.backgroundOn : buttonTheme.backgroundOff,
+        color: isOn ? buttonTheme.iconOn : buttonTheme.iconOff,
         borderRadius: 1,
         '&:hover': {
-          backgroundColor: !disabled
-            ? hasNotification
-              ? theme.button.notificationHover
-              : theme.button.hover
-            : theme.button.backgroundOn,
+          backgroundColor: !disabled ? buttonTheme.hover : buttonTheme.backgroundOff,
         },
         '&:disabled': {
-          backgroundColor: theme.button.backgroundOff,
+          backgroundColor: buttonTheme.backgroundOff,
         },
         boxShadow: '0 2px 4px rgba(0,0,0,0.5)',
       }}
