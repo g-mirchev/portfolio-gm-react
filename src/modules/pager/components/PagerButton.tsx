@@ -29,8 +29,10 @@ const PagerButton: FC<PagerButtonProps> = ({
         backgroundColor: isOn ? buttonTheme.backgroundOn : buttonTheme.backgroundOff,
         color: isOn ? buttonTheme.iconOn : buttonTheme.iconOff,
         borderRadius: 1,
-        '&:hover': {
-          backgroundColor: !disabled ? buttonTheme.hover : buttonTheme.backgroundOff,
+        '@media (hover: hover)': {
+          '&:hover': {
+            backgroundColor: !disabled ? buttonTheme.hover : buttonTheme.backgroundOff,
+          },
         },
         '&:active:not(:disabled)': {
           transform: 'translateY(2px)',
