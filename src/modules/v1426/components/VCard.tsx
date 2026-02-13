@@ -1,7 +1,7 @@
 import { useState, type FC, type ReactElement } from 'react';
 import { Pager, pinkTheme } from 'modules/pager';
 import { Box, Paper, Typography } from '@mui/material';
-import { vcardtitle } from 'data/vcontent';
+import { vcardtitle, pagerCodes } from 'data/vcontent';
 
 const VCard: FC = (): ReactElement => {
   const [pagerMessages, setPagerMessages] = useState<string[]>([]);
@@ -9,7 +9,7 @@ const VCard: FC = (): ReactElement => {
   const onPowerClick = (isOn: boolean) => {
     if (isOn) {
       setTimeout(() => {
-        setPagerMessages(['143']);
+        setPagerMessages(pagerCodes);
       }, 5000);
     } else {
       setPagerMessages([]);
