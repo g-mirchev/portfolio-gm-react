@@ -1,20 +1,32 @@
-import { useState, type FC, type ReactElement } from 'react';
+import { useEffect, useRef, useState, type FC, type ReactElement } from 'react';
 import { Pager, pinkTheme } from 'modules/pager';
 import { Box, Paper, Typography } from '@mui/material';
 import { vcardtitle, pagerCodes } from 'data/vcontent';
 
 const VCard: FC = (): ReactElement => {
   const [pagerMessages, setPagerMessages] = useState<string[]>([]);
+  const timerRef = useRef<ReturnType<typeof setTimeout>>(null);
 
   const onPowerClick = (isOn: boolean) => {
+    if (timerRef.current) {
+      clearTimeout(timerRef.current);
+      timerRef.current = null;
+    }
+
     if (isOn) {
-      setTimeout(() => {
+      timerRef.current = setTimeout(() => {
         setPagerMessages(pagerCodes);
       }, 5000);
     } else {
       setPagerMessages([]);
     }
   };
+
+  useEffect(() => {
+    return () => {
+      if (timerRef.current) clearTimeout(timerRef.current);
+    };
+  }, []);
 
   const wavyMask = `
     radial-gradient(circle at 0 50%, transparent 8px, #000 8.5px) 0 calc(50% - 15px) / 100% 30px repeat-y,
