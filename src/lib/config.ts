@@ -2,6 +2,7 @@ import { combineSlices } from '@reduxjs/toolkit';
 
 /** Reducers */
 import { themeReducer } from 'modules/theme';
+import { ticTacToeReducer } from 'modules/tictactoe';
 /**
  * Combines multiple reducer functions into a single reducing function that can be passed
  * to the Redux store.
@@ -12,4 +13,5 @@ import { themeReducer } from 'modules/theme';
 export const rootReducer = combineSlices({
   // Regular slice reducers
   theme: themeReducer,
+  ticTacToe: ticTacToeReducer,
 });
