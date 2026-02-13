@@ -48,7 +48,7 @@ export const classicTheme: PagerTheme = {
     backgroundOn: '#4a4a4a',
     backgroundOff: '#2a2a2a',
     hover: '#5a5a5a',
-    iconOn: '#4ade80',
+    iconOn: '#1fb827',
     iconOff: '#c40303',
   },
   navButton: {
@@ -59,7 +59,7 @@ export const classicTheme: PagerTheme = {
     iconOff: '#c40303',
   },
   receiverButton: {
-    backgroundOn: '#4ade80',
+    backgroundOn: '#1fb827',
     backgroundOff: '#2a2a2a',
     hover: '#3fb36a',
     iconOn: '#fab906',
