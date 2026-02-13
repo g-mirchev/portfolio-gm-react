@@ -32,9 +32,14 @@ const PagerButton: FC<PagerButtonProps> = ({
         '&:hover': {
           backgroundColor: !disabled ? buttonTheme.hover : buttonTheme.backgroundOff,
         },
+        '&:active:not(:disabled)': {
+          transform: 'translateY(2px)',
+          boxShadow: '0 0px 2px rgba(0,0,0,0.5)',
+        },
         '&:disabled': {
           backgroundColor: buttonTheme.backgroundOff,
         },
+        transition: 'transform 0.1s ease, box-shadow 0.1s ease',
         boxShadow: '0 2px 4px rgba(0,0,0,0.5)',
       }}
     >
